@@ -16,6 +16,7 @@ import { Heart, X, Loader2, Cat, RefreshCw } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
+import { toast } from "sonner";
 
 type Cat = {
   id: string;
@@ -77,9 +78,11 @@ const CatPage = () => {
   const handleSwipe = (direction: string, cat: Cat) => {
     if (direction === "left") {
       setDislikeCats(prev => [...prev, cat]);
+      toast("Cat disliked!");
       console.log("Disliked cat:", cat.id);
     } else if (direction === "right") {
       setLikeCats(prev => [...prev, cat]);
+      toast("Cat liked!");
       console.log("Liked cat:", cat.id);
     }
   };
@@ -373,7 +376,7 @@ const CatPage = () => {
         <footer className="mt-12 text-center text-sm text-muted-foreground">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Cat className="h-4 w-4" />
-            <span>Powered by The Cat API</span>
+            <span>Powered by The cataas API</span>
           </div>
           <p>© 2025 Purfect Match &bull; Bringing cats and humans together</p>
         </footer>
