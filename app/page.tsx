@@ -7,7 +7,6 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
 import { useSprings, animated, to as interpolate } from '@react-spring/web';
 import { useDrag } from '@use-gesture/react';
@@ -34,7 +33,7 @@ const to = (i: number) => ({
   delay: i * 100,
 });
 
-const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
+const from = (i:number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 
 // When a card is swiped
 const transform = (r: number, s: number) => 
@@ -328,7 +327,7 @@ const CatPage = () => {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground mb-2">Your favorite matches</p>
             <div className="flex flex-wrap gap-2 justify-center">
-              {likeCats.slice(0, 5).map((cat, i) => (
+              {likeCats.slice(0, 5).map((cat) => (
                 <div key={cat.id} className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary shadow-sm">
                   <Image 
                     src={getCatImage(cat.id)} 
@@ -376,7 +375,7 @@ const CatPage = () => {
             <Cat className="h-4 w-4" />
             <span>Powered by The Cat API</span>
           </div>
-          <p>© 2025 Purfect Match • Bringing cats and humans together</p>
+          <p>© 2025 Purfect Match &bull; Bringing cats and humans together</p>
         </footer>
       </div>
     </div>
