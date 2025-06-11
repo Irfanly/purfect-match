@@ -33,7 +33,7 @@ const to = (i: number) => ({
   delay: i * 100,
 });
 
-const from = (i:number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
+const from = (_i:number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 
 // When a card is swiped
 const transform = (r: number, s: number) => 
@@ -292,10 +292,10 @@ const CatPage = () => {
         </div>
         
         <h2 className="text-2xl font-bold mb-2">Swipe Session Complete!</h2>
-        <p className="text-muted-foreground mb-6 text-center">Here's a summary of your matches</p>
+        <p className="text-muted-foreground mb-6 text-center">Here&apos;s a summary of your matches</p>
         
-        <div className="stats grid grid-cols-2 gap-6 w-full max-w-xs mb-8">
-          <div className="stat relative bg-gradient-to-br from-pink-50 to-primary/5 p-6 rounded-xl flex flex-col items-center border border-primary/20 shadow-sm">
+        <div className="grid grid-cols-2 gap-6 w-full max-w-xs mb-8">
+          <div className="relative bg-gradient-to-br from-pink-50 to-primary/5 p-6 rounded-xl flex flex-col items-center border border-primary/20 shadow-sm">
             <Heart className="h-8 w-8 text-primary mb-2" />
             <span className="text-3xl font-bold">{likeCats.length}</span>
             <span className="text-sm text-muted-foreground">Liked</span>
