@@ -33,7 +33,7 @@ const to = (i: number) => ({
   delay: i * 100,
 });
 
-const from = (_i:number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
+const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 
 // When a card is swiped
 const transform = (r: number, s: number) => 
@@ -86,7 +86,7 @@ const CatPage = () => {
 
   const [props, api] = useSprings(cats.length, i => ({
     ...to(i),
-    from: from(i),
+    from: from(),
   }));
 
   // Create a drag binding
@@ -159,7 +159,7 @@ const CatPage = () => {
       <div className="flex flex-col items-center gap-6">
         {props.map(({ x, y, rot, scale }, i) => (
           <animated.div
-            className="card-container absolute"
+            className="absolute select-none touch-none"
             key={cats[i]?.id || i}
             style={{ x, y, touchAction: "none" }}
           >
